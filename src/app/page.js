@@ -83,15 +83,19 @@ export default function Home() {
         // 5000`
 
           imageListItems.push(
-            <article key={image.id}>
+            <article key={image.id} className="flex justify-items-center items-center gap-3">
               <img src={image.images.jpg.image_url} width="200"/>
-              <p>Author: {image.title}</p>
-              <p>Duration: {image.duration}</p>
+              <div className="flex flex-col">
+                <p>Author: {image.title}</p>
+                <p>Duration: {image.duration}</p>
+                <p>{image.synopsis}</p>
+              </div>
+              
               <hr/>
             </article>
           )
       });
-      return <section className="flex flex-col  bg-teal-100" >{imageListItems}</section>;
+      return <section className="flex flex-col items-center bg-teal-100 gap-10" >{imageListItems}</section>;
     }
 
     return (
